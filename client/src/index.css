@@ -1,0 +1,588 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(210 40% 15%);
+  --card: hsl(210 20% 98%);
+  --card-foreground: hsl(210 40% 15%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(210 40% 15%);
+  --primary: hsl(200 100% 30%);
+  --primary-foreground: hsl(0 0% 100%);
+  --primary-50: hsl(200 100% 97%);
+  --primary-100: hsl(200 100% 92%);
+  --primary-500: hsl(200 100% 40%);
+  --primary-600: hsl(200 100% 30%);
+  --primary-700: hsl(200 100% 25%);
+  --primary-900: hsl(200 100% 20%);
+  --secondary: hsl(25 95% 53%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --secondary-50: hsl(25 95% 97%);
+  --secondary-100: hsl(25 95% 92%);
+  --secondary-500: hsl(25 95% 53%);
+  --secondary-600: hsl(25 95% 48%);
+  --secondary-700: hsl(25 95% 43%);
+  --muted: hsl(210 20% 96%);
+  --muted-foreground: hsl(210 15% 45%);
+  --accent: hsl(25 95% 53%);
+  --accent-foreground: hsl(0 0% 100%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(210 20% 88%);
+  --input: hsl(210 20% 96%);
+  --ring: hsl(200 100% 30%);
+  --chart-1: hsl(200 100% 30%);
+  --chart-2: hsl(25 95% 53%);
+  --chart-3: hsl(210 60% 55%);
+  --chart-4: hsl(145 80% 45%);
+  --chart-5: hsl(280 60% 55%);
+  --sidebar: hsl(200 100% 30%);
+  --sidebar-foreground: hsl(0 0% 100%);
+  --sidebar-primary: hsl(25 95% 53%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(200 100% 40%);
+  --sidebar-accent-foreground: hsl(0 0% 100%);
+  --sidebar-border: hsl(200 100% 25%);
+  --sidebar-ring: hsl(25 95% 53%);
+  
+  /* Professional Booking Portal Brand Colors */
+  --booking-blue-50: hsl(200 100% 97%);
+  --booking-blue-100: hsl(200 100% 92%);
+  --booking-blue-200: hsl(200 100% 80%);
+  --booking-blue-300: hsl(200 100% 65%);
+  --booking-blue-400: hsl(200 100% 50%);
+  --booking-blue-500: hsl(200 100% 40%);
+  --booking-blue-600: hsl(200 100% 30%);
+  --booking-blue-700: hsl(200 100% 25%);
+  --booking-blue-800: hsl(200 100% 20%);
+  --booking-blue-900: hsl(200 100% 15%);
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 1.3rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 2px 4px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 4px 6px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 8px 10px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --tracking-normal: 0em;
+}
+
+/* Custom Checkbox Styling - Rectangular with Sharp Light Curves */
+[data-radix-checkbox-root] {
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 3px !important;
+  border: 2px solid #d1d5db !important;
+  background-color: white !important;
+  appearance: none !important;
+}
+
+[data-radix-checkbox-root]:hover {
+  border-color: var(--booking-blue-400) !important;
+}
+
+[data-radix-checkbox-root][data-state="checked"] {
+  background-color: var(--booking-blue-600) !important;
+  border-color: var(--booking-blue-600) !important;
+}
+
+/* Ensure checkboxes stay rectangular */
+button[role="checkbox"] {
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 3px !important;
+  border: 2px solid #d1d5db !important;
+  background-color: white !important;
+}
+
+button[role="checkbox"]:hover {
+  border-color: var(--booking-blue-400) !important;
+}
+
+button[role="checkbox"][data-state="checked"] {
+  background-color: var(--booking-blue-600) !important;
+  border-color: var(--booking-blue-600) !important;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: hsl(200 100% 8%);
+  --foreground: hsl(210 20% 95%);
+  --card: hsl(200 100% 12%);
+  --card-foreground: hsl(210 20% 95%);
+  --popover: hsl(200 100% 8%);
+  --popover-foreground: hsl(210 20% 95%);
+  --primary: hsl(200 100% 45%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(25 95% 60%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --muted: hsl(213 50% 15%);
+  --muted-foreground: hsl(210 20% 65%);
+  --accent: hsl(25 95% 60%);
+  --accent-foreground: hsl(0 0% 100%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(213 50% 20%);
+  --input: hsl(213 50% 15%);
+  --ring: hsl(213 94% 45%);
+  --chart-1: hsl(213 94% 45%);
+  --chart-2: hsl(25 95% 60%);
+  --chart-3: hsl(210 60% 65%);
+  --chart-4: hsl(145 70% 55%);
+  --chart-5: hsl(280 60% 65%);
+  --sidebar: hsl(213 94% 12%);
+  --sidebar-foreground: hsl(210 20% 95%);
+  --sidebar-primary: hsl(25 95% 60%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(213 94% 45%);
+  --sidebar-accent-foreground: hsl(0 0% 100%);
+  --sidebar-border: hsl(213 50% 20%);
+  --sidebar-ring: hsl(25 95% 60%);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 1.3rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 2px 4px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 4px 6px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 8px 10px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Professional Booking Portal Brand Utilities */
+  .booking-primary {
+    @apply bg-[hsl(213_94%_25%)] text-white;
+  }
+  
+  .booking-secondary {
+    @apply bg-[hsl(25_95%_53%)] text-white;
+  }
+  
+  .booking-accent {
+    @apply bg-[hsl(210_60%_55%)] text-white;
+  }
+  
+  .booking-light {
+    @apply bg-[hsl(213_94%_97%)] text-[hsl(210_40%_15%)];
+  }
+  
+  .booking-neutral {
+    @apply bg-[hsl(210_20%_96%)] text-[hsl(210_40%_15%)];
+  }
+  
+  .booking-success {
+    @apply bg-[hsl(145_80%_45%)] text-white;
+  }
+  
+  .booking-gradient {
+    background: linear-gradient(135deg, hsl(213 94% 25%) 0%, hsl(213 94% 35%) 50%, hsl(210 60% 55%) 100%);
+  }
+  
+  .roomnest-gradient {
+    background: linear-gradient(135deg, hsl(213 94% 25%) 0%, hsl(213 94% 35%) 50%, hsl(210 60% 55%) 100%);
+  }
+  
+  .roomnest-primary {
+    @apply bg-[hsl(213_94%_25%)] text-white;
+  }
+  
+  .roomnest-secondary {
+    @apply bg-[hsl(25_95%_53%)] text-white;
+  }
+  
+  .roomnest-accent {
+    @apply bg-[hsl(210_60%_55%)] text-white;
+  }
+  
+  .roomnest-button-primary {
+    @apply bg-[hsl(213_94%_25%)] hover:bg-[hsl(213_94%_20%)] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg;
+    box-shadow: 0 4px 14px 0 hsl(213 94% 25% / 0.3);
+  }
+  
+  .roomnest-button-secondary {
+    @apply bg-[hsl(25_95%_53%)] hover:bg-[hsl(25_95%_48%)] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg;
+    box-shadow: 0 4px 14px 0 hsl(25 95% 53% / 0.3);
+  }
+  
+  .roomnest-card-hover {
+    @apply hover:shadow-xl transition-all duration-300 hover:scale-[1.02];
+  }
+  
+  .roomnest-card-hover:hover {
+    box-shadow: 0 25px 50px -12px hsl(213 94% 25% / 0.15);
+  }
+  
+  .booking-card-hover {
+    @apply hover:shadow-xl transition-all duration-300 hover:scale-[1.02];
+  }
+  
+  .booking-card-hover:hover {
+    box-shadow: 0 25px 50px -12px hsl(213 94% 25% / 0.15);
+  }
+  
+  .booking-button-primary {
+    @apply bg-[hsl(213_94%_25%)] hover:bg-[hsl(213_94%_20%)] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg;
+    box-shadow: 0 4px 14px 0 hsl(213 94% 25% / 0.3);
+  }
+  
+  .booking-button-secondary {
+    @apply bg-[hsl(25_95%_53%)] hover:bg-[hsl(25_95%_48%)] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg;
+    box-shadow: 0 4px 14px 0 hsl(25 95% 53% / 0.3);
+  }
+}
+
+/* Professional Booking Portal specific styles */
+.search-tab.active {
+  @apply bg-[hsl(213_94%_25%)] text-white;
+}
+
+.hero-background {
+  background: linear-gradient(135deg, 
+    hsl(220 85% 35% / 0.85) 0%, 
+    hsl(200 100% 40% / 0.75) 50%, 
+    hsl(15 80% 50% / 0.85) 100%
+  ),
+  url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=800');
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* Mobile-first responsive design enhancements */
+@layer base {
+  /* Improve touch targets on mobile */
+  @media (max-width: 768px) {
+    button, a, input, textarea, select {
+      min-height: 44px; /* iOS HIG minimum touch target */
+    }
+  }
+  
+  /* PWA-specific styles */
+  .standalone {
+    /* Hide browser UI elements when running as PWA */
+    --safe-area-inset-top: env(safe-area-inset-top);
+    --safe-area-inset-bottom: env(safe-area-inset-bottom);
+    --safe-area-inset-left: env(safe-area-inset-left);
+    --safe-area-inset-right: env(safe-area-inset-right);
+    
+    padding-top: var(--safe-area-inset-top);
+    padding-bottom: var(--safe-area-inset-bottom);
+    padding-left: var(--safe-area-inset-left);
+    padding-right: var(--safe-area-inset-right);
+  }
+
+  /* Mobile viewport optimization */
+  html {
+    /* Prevent zoom on input focus on iOS */
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
+  }
+
+  /* Smooth scrolling for mobile */
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+}
+
+@layer components {
+  /* Mobile-optimized card layouts */
+  .mobile-card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4 mb-4;
+  }
+  
+  /* Touch-friendly buttons */
+  .mobile-touch-target {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+  
+  /* Mobile-optimized form inputs */
+  .mobile-input {
+    @apply text-base; /* Prevent zoom on iOS */
+  }
+  
+  /* Responsive text sizing */
+  .responsive-heading {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
+  }
+  
+  .responsive-body {
+    @apply text-sm sm:text-base;
+  }
+  
+  /* Mobile navigation spacing */
+  .mobile-nav-spacing {
+    @apply pb-20 lg:pb-0; /* Account for bottom navigation on mobile */
+  }
+  
+  /* Grid responsive layouts */
+  .responsive-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4;
+  }
+  
+  .responsive-grid-2 {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-4;
+  }
+}
+
+/* Rich Text Editor Styling */
+.rich-text-editor .ql-toolbar {
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.375rem 0.375rem 0 0;
+  background: hsl(var(--background));
+}
+
+.rich-text-editor .ql-container {
+  border: 1px solid hsl(var(--border));
+  border-top: none;
+  border-radius: 0 0 0.375rem 0.375rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+
+.rich-text-editor .ql-editor {
+  min-height: 200px;
+  color: hsl(var(--foreground));
+}
+
+.rich-text-editor .ql-editor.ql-blank::before {
+  color: hsl(var(--muted-foreground));
+  font-style: normal;
+}
+
+.rich-text-editor .ql-snow .ql-picker {
+  color: hsl(var(--foreground));
+}
+
+.rich-text-editor .ql-snow .ql-stroke {
+  stroke: hsl(var(--foreground));
+}
+
+.rich-text-editor .ql-snow .ql-fill {
+  fill: hsl(var(--foreground));
+}
+
+.rich-text-editor .ql-snow.ql-toolbar button:hover,
+.rich-text-editor .ql-snow .ql-toolbar button:hover,
+.rich-text-editor .ql-snow.ql-toolbar button:focus,
+.rich-text-editor .ql-snow .ql-toolbar button:focus,
+.rich-text-editor .ql-snow.ql-toolbar button.ql-active,
+.rich-text-editor .ql-snow .ql-toolbar button.ql-active {
+  color: hsl(var(--primary));
+}
+
+.rich-text-editor .ql-snow.ql-toolbar button:hover .ql-stroke,
+.rich-text-editor .ql-snow .ql-toolbar button:hover .ql-stroke,
+.rich-text-editor .ql-snow.ql-toolbar button:focus .ql-stroke,
+.rich-text-editor .ql-snow .ql-toolbar button:focus .ql-stroke,
+.rich-text-editor .ql-snow.ql-toolbar button.ql-active .ql-stroke,
+.rich-text-editor .ql-snow .ql-toolbar button.ql-active .ql-stroke {
+  stroke: hsl(var(--primary));
+}
+
+.rich-text-editor .ql-snow.ql-toolbar button:hover .ql-fill,
+.rich-text-editor .ql-snow .ql-toolbar button:hover .ql-fill,
+.rich-text-editor .ql-snow.ql-toolbar button:focus .ql-fill,
+.rich-text-editor .ql-snow .ql-toolbar button:focus .ql-fill,
+.rich-text-editor .ql-snow.ql-toolbar button.ql-active .ql-fill,
+.rich-text-editor .ql-snow .ql-toolbar button.ql-active .ql-fill {
+  fill: hsl(var(--primary));
+}
+
+/* Dark mode support for rich text editor */
+.dark .rich-text-editor .ql-toolbar {
+  background: hsl(var(--card));
+  border-color: hsl(var(--border));
+}
+
+.dark .rich-text-editor .ql-container {
+  background: hsl(var(--card));
+  border-color: hsl(var(--border));
+}
+
+.dark .rich-text-editor .ql-editor {
+  color: hsl(var(--foreground));
+}
+
+/* Rich text editor content styling */
+.rich-text-editor .ql-editor h1,
+.rich-text-editor .ql-editor h2,
+.rich-text-editor .ql-editor h3,
+.rich-text-editor .ql-editor h4,
+.rich-text-editor .ql-editor h5,
+.rich-text-editor .ql-editor h6 {
+  font-weight: 600;
+  margin: 0.5em 0;
+}
+
+.rich-text-editor .ql-editor h1 {
+  font-size: 2em;
+}
+
+.rich-text-editor .ql-editor h2 {
+  font-size: 1.5em;
+}
+
+.rich-text-editor .ql-editor h3 {
+  font-size: 1.17em;
+}
+
+.rich-text-editor .ql-editor ul,
+.rich-text-editor .ql-editor ol {
+  padding-left: 1.5em;
+}
+
+.rich-text-editor .ql-editor blockquote {
+  border-left: 4px solid hsl(var(--primary));
+  padding-left: 1em;
+  margin: 1em 0;
+  font-style: italic;
+}
+
+/* Professional Booking Portal Color Utilities */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Booking Blue Background Colors */
+  .bg-booking-blue-50 { background-color: var(--booking-blue-50); }
+  .bg-booking-blue-100 { background-color: var(--booking-blue-100); }
+  .bg-booking-blue-200 { background-color: var(--booking-blue-200); }
+  .bg-booking-blue-300 { background-color: var(--booking-blue-300); }
+  .bg-booking-blue-400 { background-color: var(--booking-blue-400); }
+  .bg-booking-blue-500 { background-color: var(--booking-blue-500); }
+  .bg-booking-blue-600 { background-color: var(--booking-blue-600); }
+  .bg-booking-blue-700 { background-color: var(--booking-blue-700); }
+  .bg-booking-blue-800 { background-color: var(--booking-blue-800); }
+  .bg-booking-blue-900 { background-color: var(--booking-blue-900); }
+  
+  /* Booking Blue Text Colors */
+  .text-booking-blue-50 { color: var(--booking-blue-50); }
+  .text-booking-blue-100 { color: var(--booking-blue-100); }
+  .text-booking-blue-200 { color: var(--booking-blue-200); }
+  .text-booking-blue-300 { color: var(--booking-blue-300); }
+  .text-booking-blue-400 { color: var(--booking-blue-400); }
+  .text-booking-blue-500 { color: var(--booking-blue-500); }
+  .text-booking-blue-600 { color: var(--booking-blue-600); }
+  .text-booking-blue-700 { color: var(--booking-blue-700); }
+  .text-booking-blue-800 { color: var(--booking-blue-800); }
+  .text-booking-blue-900 { color: var(--booking-blue-900); }
+  
+  /* Booking Blue Border Colors */
+  .border-booking-blue-50 { border-color: var(--booking-blue-50); }
+  .border-booking-blue-100 { border-color: var(--booking-blue-100); }
+  .border-booking-blue-200 { border-color: var(--booking-blue-200); }
+  .border-booking-blue-300 { border-color: var(--booking-blue-300); }
+  .border-booking-blue-400 { border-color: var(--booking-blue-400); }
+  .border-booking-blue-500 { border-color: var(--booking-blue-500); }
+  .border-booking-blue-600 { border-color: var(--booking-blue-600); }
+  .border-booking-blue-700 { border-color: var(--booking-blue-700); }
+  .border-booking-blue-800 { border-color: var(--booking-blue-800); }
+  .border-booking-blue-900 { border-color: var(--booking-blue-900); }
+
+  /* Booking Blue Hover States */
+  .hover\:bg-booking-blue-50:hover { background-color: var(--booking-blue-50); }
+  .hover\:bg-booking-blue-100:hover { background-color: var(--booking-blue-100); }
+  .hover\:bg-booking-blue-200:hover { background-color: var(--booking-blue-200); }
+}
+
+/* Print Styles for Reports */
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+  
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  /* Ensure colors are preserved in print */
+  .bg-gradient-to-r,
+  .bg-gradient-to-br,
+  .bg-booking-blue-50,
+  .bg-booking-blue-100,
+  .bg-booking-blue-600,
+  .bg-booking-blue-700,
+  .bg-booking-blue-800,
+  .bg-green-100,
+  .bg-red-100,
+  .bg-yellow-100 {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  /* Ensure borders are visible */
+  .border,
+  .border-2,
+  .border-t,
+  .border-b,
+  .border-booking-blue-300,
+  .border-booking-blue-600 {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  /* Table styling for print */
+  table {
+    page-break-inside: auto;
+  }
+  
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  
+  /* Avoid breaking property groups */
+  .property-group {
+    page-break-inside: avoid;
+  }
+  
+  /* Keep headers with content */
+  thead {
+    display: table-header-group;
+  }
+  
+  /* Ensure text colors are preserved */
+  .text-white,
+  .text-booking-blue-900,
+  .text-booking-blue-800,
+  .text-green-800,
+  .text-red-800,
+  .text-yellow-800 {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
